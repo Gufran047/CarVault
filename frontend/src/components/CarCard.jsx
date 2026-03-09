@@ -11,11 +11,11 @@ const CarCard = ({ car, setCars }) => {
 
   const isActive = location.pathname === `/cars/${car._id}`;
 
+  // ✅ FIXED IMAGE URL
   const imageUrl = car.image
-    ? `http://localhost:5000/uploads/${car.image}`
+    ? `${api.defaults.baseURL}/uploads/${car.image}`
     : null;
 
-  // DELETE
   const handleDelete = async () => {
     try {
       await api.delete(`/cars/${car._id}`);
@@ -28,7 +28,6 @@ const CarCard = ({ car, setCars }) => {
     }
   };
 
-  // TOGGLE STATUS
   const toggleStatus = async (e) => {
     e.preventDefault();
 
@@ -108,7 +107,6 @@ const CarCard = ({ car, setCars }) => {
         {/* ACTION BUTTONS */}
         <div className="mt-4 flex justify-end items-center gap-4">
 
-          {/* TOGGLE STATUS */}
           <div className="tooltip" data-tip="Toggle Status">
             <button
               onClick={toggleStatus}
@@ -118,7 +116,6 @@ const CarCard = ({ car, setCars }) => {
             </button>
           </div>
 
-          {/* EDIT */}
           <div className="tooltip tooltip-warning" data-tip="Edit Car">
             <button
               onClick={(e) => {
@@ -131,7 +128,6 @@ const CarCard = ({ car, setCars }) => {
             </button>
           </div>
 
-          {/* DELETE */}
           <div className="tooltip tooltip-error" data-tip="Delete Car">
             <button
               onClick={(e) => {
@@ -146,7 +142,6 @@ const CarCard = ({ car, setCars }) => {
         </div>
       </Link>
 
-      {/* DELETE MODAL */}
       {showModal && (
         <dialog className="modal modal-open">
           <div className="modal-box">
