@@ -1,0 +1,14 @@
+{
+  "name": "merncar",
+  "version": "1.0.0",
+  "description": "README.md for Your Project\r # 🚗 CarVault – MERN Stack Car Management App",
+  "main": "index.js",
+  "scripts": {
+     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
