@@ -85,15 +85,15 @@ const CarDetailPage = () => {
     );
   }
 
+  // ✅ FIXED IMAGE URL
   const imageUrl = car?.image
-    ? `http://localhost:5000/uploads/${car.image}`
+    ? `${api.defaults.baseURL}/uploads/${car.image}`
     : null;
 
   return (
     <div className="min-h-screen bg-base-200">
       <div className="container mx-auto px-4 py-8 max-w-2xl">
 
-        {/* Top Buttons */}
         <div className="flex justify-between mb-6">
           <Link to="/" className="btn btn-ghost">
             <ArrowLeftIcon className="h-5 w-5" />
@@ -109,7 +109,6 @@ const CarDetailPage = () => {
         <div className="card bg-base-100 shadow-lg">
           <div className="card-body">
 
-            {/* Image */}
             {imageUrl && (
               <img
                 src={imageUrl}
@@ -118,7 +117,6 @@ const CarDetailPage = () => {
               />
             )}
 
-            {/* Upload Image */}
             <div className="form-control mb-4">
               <label className="label">
                 <span className="label-text">Change Image</span>
@@ -130,7 +128,6 @@ const CarDetailPage = () => {
               />
             </div>
 
-            {/* Brand */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Brand</span>
@@ -142,7 +139,6 @@ const CarDetailPage = () => {
               />
             </div>
 
-            {/* Model */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Model</span>
@@ -154,7 +150,6 @@ const CarDetailPage = () => {
               />
             </div>
 
-            {/* Year */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Year</span>
@@ -167,7 +162,6 @@ const CarDetailPage = () => {
               />
             </div>
 
-            {/* Price */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Price</span>
@@ -180,7 +174,6 @@ const CarDetailPage = () => {
               />
             </div>
 
-            {/* Fuel Type */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Fuel Type</span>
@@ -199,7 +192,6 @@ const CarDetailPage = () => {
               </select>
             </div>
 
-            {/* Transmission */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Transmission</span>
@@ -217,7 +209,6 @@ const CarDetailPage = () => {
               </select>
             </div>
 
-            {/* Color */}
             <div className="form-control mb-3">
               <label className="label">
                 <span className="label-text">Color</span>
@@ -229,7 +220,6 @@ const CarDetailPage = () => {
               />
             </div>
 
-            {/* Status */}
             <div className="form-control mb-4">
               <label className="label">
                 <span className="label-text">Status</span>
