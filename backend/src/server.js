@@ -13,16 +13,14 @@ connectDB();
 
 const app = express();
 
-// parse JSON
 app.use(express.json());
 
-// ✅ CORS
+
 app.use(cors());
 
-// ✅ serve images
 app.use('/uploads', express.static('uploads'));
 
-// ✅ routes
+
 app.use('/cars', carRoutes);
 
 const PORT = process.env.PORT || 5000;
